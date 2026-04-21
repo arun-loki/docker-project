@@ -1,5 +1,5 @@
 # Use this source OCI image.
-FROM sloopstash/base:v1.1.1 AS install_redis
+FROM Arunk/base:v1.1.1 AS install_redis
  
 # Switch to tmp directory.
 WORKDIR /tmp
@@ -16,7 +16,7 @@ RUN make distclean \
 && make \
 && make install
  
-FROM sloopstash/base:v1.1.1 AS copy_redis_binaries
+FROM Arunk/base:v1.1.1 AS copy_redis_binaries
  
 COPY --from=install_redis /usr/local/bin/redis-server /usr/local/bin/redis-server
 COPY --from=install_redis /usr/local/bin/redis-cli /usr/local/bin/redis-cli
