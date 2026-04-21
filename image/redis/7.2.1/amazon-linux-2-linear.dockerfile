@@ -1,5 +1,5 @@
 # Use this source OCI image.
-FROM sloopstash/base:v1.1.1
+FROM Arunk/base:v1.1.1
  
 # Switch to tmp directory.
 WORKDIR /tmp
