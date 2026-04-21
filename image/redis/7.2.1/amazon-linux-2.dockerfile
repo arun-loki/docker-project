@@ -1,6 +1,6 @@
 # Docker image to use.
 # Parallel stage (concurrent)
-FROM sloopstash/base:v1.1.1 AS install_system_packages
+FROM Arunk/base:v1.1.1 AS install_system_packages
 
 # Install system packages.
 RUN yum install -y tcl
@@ -24,7 +24,7 @@ RUN set -x \
 
 # ---------------------------------------------
 # Parallel stage
-FROM sloopstash/base:v1.1.1 AS create_redis_directories
+FROM Arunk/base:v1.1.1 AS create_redis_directories
 
 # Create Redis directories.
 RUN set -x \
@@ -39,7 +39,7 @@ RUN set -x \
 
 # --------------------------------------------
 # Convergence stage
-FROM sloopstash/base:v1.1.1 AS finalize_redis_oci_image
+FROM Arunk/base:v1.1.1 AS finalize_redis_oci_image
 
 COPY --from=install_redis /usr/local/bin/redis-server /usr/local/bin/redis-server
 COPY --from=install_redis /usr/local/bin/redis-cli /usr/local/bin/redis-cli
