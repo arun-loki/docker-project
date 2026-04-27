@@ -1,5 +1,5 @@
 # Docker image to use.
-FROM sloopstash/base:v1.1.1
+FROM Arunk/base:v1.1.1
 
 # Install Nginx.
 WORKDIR /tmp
